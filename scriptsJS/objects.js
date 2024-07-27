@@ -13,11 +13,7 @@ pessoa = {
         numero: 3581,
     },
     profissao: "programador",
-    telefone: 53981352807,
-       dados : function () {
-       console.log(`Esses são os dados do funcionário ${this.nome}.`)
-    }
-        
+    telefone: 53981352807
 }
 
 
