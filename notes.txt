@@ -1,0 +1,27 @@
+node --version 
+npm --version
+
+* executar arquivo   -> node nomeArquivo.js
+
+npm init -> inicializa a pasta para criar um projeto npm
+yarn é um gerenciador de dependencias.
+npm install -g yarn
+
+*Instalar com yarn -> yarn add jquery 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                    ARRAYS
+push
+pop
+shift
+unshift
+concat
+join
+slice 
+splice
+forEach
+map
+filter
+find
+
