@@ -15,6 +15,15 @@ pessoa = {
     profissao: "programador",
     telefone: 53981352807
 }
-
-
 console.log(pessoa)
+
+const carros = [
+    "Pagani Zonda",  "Lamborghini Diablo", "Bugatti Veyron", 10, 7, true, new Date(), function(pessoa){
+        console.log(pessoa)
+    }
+];
+// foreach (valor, índice)
+carros.forEach(function(value, index){
+    console.log(index, value);
+});
+
