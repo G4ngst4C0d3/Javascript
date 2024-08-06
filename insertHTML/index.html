@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inserir HTML com javascript</title>
+    <!-- Para inserir novos elementos de texto em uma página web via javascript podem ser utilizados os métodos
+    createElement(), createTextNode() e appendChild().-->
+</head>
+<body>
+    <div>
+        <img src="tarefas.jpg" alt="tarefas" class="">
+    </div>
+    <div id="divQuadro">
+                <h1>Tarefas do dia(a realizar)</h1>
+                    <form>
+                        <p><label for="inTarefa">Tarefa:</label>
+                            <input type="text" class="form-control" id="inTarefa" required >
+                        </p>
+                        <p><input type="submit" value="Adicionar &#10003;">
+                        <input type="button" value="Selecionar &#8645;" id="btSelecionar">
+                        <input type="button" value="Retirar Selecionada &#10007;" id="btRetirar">
+                        <input type="button" value="Gravar &#9673;" btGravar>
+                        </p>
+                    </form>
+            </div>
+    </div>
+ <script src="js/scripts.js"></script>
+</body>
+</html>
