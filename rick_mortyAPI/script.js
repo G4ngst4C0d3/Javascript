@@ -5,7 +5,7 @@ const image = document.getElementById('img');
 
 const fetchApi = (value) => {
     const result = fetch(`https://rickandmortyapi.com/api/character/${value}`)
-    .then((res) => res.json())
+    .then((res) => res.json())  //callback transforma em json
     .then((data)  => {
         return data;   
     });
