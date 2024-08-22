@@ -59,7 +59,7 @@ frm.btRetirar.addEventListener("click", () => {
     
 })
 
-frm.btGravar.addEventListener("click", () => {
+/*frm.btGravar.addEventListener("click", () => {
     const tarefas = document.querySelectorAll("h5") // obtem tags h5 da página
     if(tarefas.length == 0){
         alert("Não há tarefas para serem gravadas.")
@@ -75,6 +75,7 @@ frm.btGravar.addEventListener("click", () => {
         alert("Tarefas gravadas com sucesso!")
     }
 })
+*/
 window.addEventListener("load", () => {
     if(localStorage.getItem("tarefasDia")){
         const dados = localStorage.getItem("tarefasDia").split(";") // cria um vetor com a lista de tarefas
@@ -87,3 +88,76 @@ window.addEventListener("load", () => {
     }
 })
 
+const filmes = document.querySelector(".filmes")
+const tbFilmes = document.querySelector("table")
+
+filmes.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const titulo = filmes.inTitulo.value
+    const genero = filmes.inGenero.value
+
+    inserirLinha(titulo, genero)
+    gravarFilme(titulo, genero)
+
+    filmes.reset()
+    filmes.inTitulo.focus()
+})
+
+const inserirLinha = (titulo, genero) => {
+    const linha = tbFilmes.insertRow(-1) // adds a row to the table
+    const col1 = linha.insertCell(0) // creates columns in the inserted row
+    const col2 = linha.insertCell(1)
+    const col3 = linha.insertCell(2)
+
+    col1.innerText = titulo // joga um conteúdo em cada célula
+    col2.innerText = genero
+    col3.innerHTML = "<i class='exclui' title='Excluir'>&#10008</i>"
+}
+
+const gravarFilme = (titulo, genero) => {
+    //se houver dados salvos em localStorage
+    if(localStorage.getItem("filmesTitulo")){
+        //obtem os dados e acrescenta ";" eo titulo/genero informado
+        const filmesTitulo = localStorage.getItem("filmesTitulo") + ";" + titulo
+        const filmesGenero = localStorage.getItem("filmesGenero") + ";" + genero
+        localStorage.setItem("filmesTitulo", filmesTitulo) //grava dados
+        localStorage.setItem("filmesGenero", filmesGenero) // em localStorage
+    }else{
+        // senão, é a primeira gravação(salva sem delimitador)
+        localStorage.setItem("filmesTitulo", titulo) //g
+        localStorage.setItem("filmesGenero", genero)
+    }
+}
+
+window.addEventListener("load", () => { // ao carregar a página
+    // se houver dados salvos em localStorage
+    if(localStorage.getItem("filmesTitulo")){
+        //converte em elementos de vetor
+        const titulos = localStorage.getItem("filmesTitulo").split(";");
+        const generos = localStorage.getItem("filmesGenero").split(";");
+        // iterates through the elements of the vector and inserts them into the table
+        for(let i = 0; i < titulos.length; i++){
+            inserirLinha(titulos[i], generos[i]);
+        }
+    }
+});
+
+tbFilmes.addEventListener("click", (e) => {
+    if(e.target.classList.contains("exclui")){
+        // accesses the "parent of the parent" of the target element, and gets the text of the first child
+        const titulo = e.target.parentElement.parentElement.children[0].innerText
+        if(confirm(`Confirma exclusão do Filme "${titulo}"?`)){
+            e.target.parentElement.parentElement.remove()
+
+            localStorage.removeItem("filmesTitulo")
+            localStorage.removeItem("filmesGenero")
+
+            for(let i = 1; i < tbFilmes.rows.length; i++){
+                const auxTitulo = tbFilmes.rows[i].cells[0].innerText
+                const auxGenero = tbFilmes.rows[i].cells[1].innerText
+                gravarFilme(auxTitulo, auxGenero)
+            }
+        }
+    }
+})
