@@ -43,3 +43,5 @@ const mostraHora = () => {
     console.log(`Hora exata: ${hora}:${min}:${seg}`)
 }
 setInterval(mostraHora, 3000)
+
+

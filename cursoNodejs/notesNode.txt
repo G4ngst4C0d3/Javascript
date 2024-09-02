@@ -1,0 +1,10 @@
+npm init -y
+npm install express
+node --watch ./app.js
+
+
+status code
+
+
+npm --version
+npm init -y // inicializa o projeto.
