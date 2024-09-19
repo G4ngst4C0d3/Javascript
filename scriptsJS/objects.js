@@ -27,3 +27,7 @@ carros.forEach(function(value, index){
     console.log(index, value);
 });
 
+for( let key in pessoa){
+    console.log(key, pessoa[key]);
+}
+
