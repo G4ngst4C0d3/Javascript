@@ -1,0 +1,9 @@
+.message{
+opacity: 1;
+
+}
+
+.message.hidden{
+    opacity: 0;
+    right: -20rem;
+}

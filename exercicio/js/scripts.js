@@ -24,3 +24,23 @@ function meuEscopo(){
 }
 
 meuEscopo();
+//CALCULADORA DE IDADE
+function calcularIdade(dataNascimento) {
+    const dataAtual = new Date();
+    const nascimento = new Date(dataNascimento);
+
+    let idade = dataAtual.getFullYear() - nascimento.getFullYear();
+    const mes = dataAtual.getMonth() - nascimento.getMonth();
+
+    // Ajusta a idade se o mês ou o dia atual ainda não passou
+    if (mes < 0 || (mes === 0 && dataAtual.getDate() < nascimento.getDate())) {
+        idade--;
+    }
+
+    return idade;
+}
+
+
+const dataNascimento = prompt("Digite sua data de nascimento (aaaa-mm-dd):");
+const idade = calcularIdade(dataNascimento);
+console.log(`Você tem ${idade} anos.`);
