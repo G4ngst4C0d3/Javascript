@@ -161,3 +161,12 @@ tbFilmes.addEventListener("click", (e) => {
         }
     }
 })
+
+
+let tela = document.getElementById("tela");
+let cxt = tela.getContext("2d");
+cxt.moveTo(0, 0);
+cxt.lineTo(250, 250);
+cxt.lineTo(500, 0);
+cxt.liWidth = 3;
+cxt.stroke();
