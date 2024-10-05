@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Formulário de Cadastro</h1>
+    <form id="registrationForm">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username">
+        <span id="usernameError" class="error"></span>
+        <br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password">
+        <span id="passwordError" class="error"></span>
+        <br><br>
+
+        <label for="confirmPassword">Confirmar Senha:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span id="confirmPasswordError" class="error"></span>
+        <br><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

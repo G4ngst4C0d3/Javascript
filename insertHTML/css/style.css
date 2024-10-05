@@ -1,0 +1,17 @@
+body{
+    
+        background-image: linear-gradient(
+            to top,
+            --bg-color-0,
+            --bg-color-73,
+            --bg-color-7,
+        );
+
+    
+}
+h1{
+    color: var(--gradient);
+}
+#tela{
+    background-color: rgb(76, 96, 118);
+}
