@@ -17,13 +17,16 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+let db = firebase.fireStore()
+
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-let db = analytics.firestore();
+
 db.collection("turmaA").get()
   .then((snapshot) => {
-    snapshot.foreach((doc) => {
+    snapshot.forEach((doc) => {
       console.log(doc.data());
     })
   })
