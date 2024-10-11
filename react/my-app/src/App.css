@@ -1,0 +1,23 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px ;
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+
+h1{
+    margin-left: 25px;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    color: aliceblue;
+}
+
+.menu li{
+    margin-left: 25px;
+    margin-right: 20px;
+    color: aliceblue;
+}

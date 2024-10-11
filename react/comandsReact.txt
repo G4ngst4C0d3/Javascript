@@ -1,0 +1,4 @@
+npm install -g npm@latest
+npx create-react-app my-app
+cd my-app
+npm start
