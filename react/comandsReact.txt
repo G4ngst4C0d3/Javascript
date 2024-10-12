@@ -2,3 +2,16 @@ npm install -g npm@latest
 npx create-react-app my-app
 cd my-app
 npm start
+
+
+---------------------
+Vite
+
+npm create vite@latest myReactApp -- --template react
+cd "nomeprojeto"
+npm install
+npm run dev
+
+
+
+// hooks são uma maneira global para criar estados

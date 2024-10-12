@@ -2,9 +2,11 @@ import React from "react";
 
 function Menu(props){
     return (<ul className="menu">
-        {props.links.map((link , index)=> {
+        {props.links.map(link=> {
             return (
-                <li key={index}>{link}</li>
+                <li>
+                    {link}
+                </li>
             )
         })}
     </ul>)
