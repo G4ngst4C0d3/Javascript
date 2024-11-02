@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import MyButton from './components/MyButton';
+import MyButton from './src/components/MyButton';
+
 
 
 const App = () => {
