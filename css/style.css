@@ -1,0 +1,33 @@
+@keyframes changeColor{
+    from{
+        background-color: red; width: 200px;
+    }to{
+        background-color: blue; width: 400px;
+    }
+}
+@keyframes move{
+    from{
+        margin-left: 0px;
+        background-color: sandybrown;
+    }to{
+        margin-left: 200px;
+        background-color: lightcoral;
+    }
+}
+.box{
+    width: 200px;
+    height: 200px;
+    border-style: solid 1px black;
+    animation: changeColor 2s infinite;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-fill-mode: both;
+}
+
+.um{
+    width: 200px;
+    height: 200px;
+    border-style: solid 1px black;
+    animation: move 2s infinite;
+    animation-timing-function: linear;
+}
